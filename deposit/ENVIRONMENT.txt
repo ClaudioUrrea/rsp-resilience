@@ -1,0 +1,13 @@
+generated            2026-08-24
+python               3.12.4
+platform             Windows-11-10.0.26200-SP0
+machine              AMD64
+numpy                1.26.4
+scipy                1.16.1
+matplotlib           3.10.5
+
+The campaign is deterministic given (--seed, NumPy version): the same
+seed on the same NumPy reproduces every figure bit-for-bit. Across
+NumPy major versions the Generator stream is stable for the
+distributions used here, but this file records the exact environment
+in which the deposited results were produced.

@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+title: "RS-p: Axiomatic Resilience Scoring for Fault-Tolerant Control of Redundant Manipulators"
+message: "If you use this software or the deposited data, please cite both the article and the Figshare record."
+type: software
+authors:
+  - given-names: Claudio
+    family-names: Urrea
+    email: claudio.urrea@usach.cl
+    affiliation: "Electrical Engineering Department, Faculty of Engineering, University of Santiago of Chile"
+    orcid: "https://orcid.org/0000-0001-7197-8928"
+version: "1.0.0"
+date-released: "2026-08-12"
+license: MIT
+repository-code: "https://github.com/ClaudioUrrea/rsp-resilience"
+identifiers:
+  - type: doi
+    value: 10.6084/m9.figshare.33214149
+    description: "Archived release, raw episode-level data and figures"
+keywords:
+  - resilience metric
+  - fault-tolerant control
+  - redundant manipulator
+  - aggregation functional
+  - weighted geometric mean
+  - rank invariance
+  - zonotope
+  - sample complexity
+preferred-citation:
+  type: article
+  authors:
+    - given-names: Claudio
+      family-names: Urrea
+      orcid: "https://orcid.org/0000-0001-7197-8928"
+  title: "An Axiomatic Resilience Functional for Fault-Tolerant Control of Redundant Manipulators: Representation, Rank Invariance, and Sample Complexity"
+  journal: Mathematics
+  publisher:
+    name: MDPI
+  year: 2026
