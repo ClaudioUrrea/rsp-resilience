@@ -23,7 +23,7 @@ Release archived here: **v1.0.0**
 ## Reproducing
 
 ```bash
-unzip rsp-resilience-v1.0.0-code.zip && cd rsp-resilience-v1.0.0
+unzip rsp-resilience-v1.0.0-code.zip && cd rsp-resilience-v1.1.0
 pip install -r requirements.txt
 python scripts/verify_dynamics.py                      # ~30 s
 python scripts/run_experiments.py --episodes 100 --calib 48 --seed 20260811
