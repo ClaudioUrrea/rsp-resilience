@@ -4,7 +4,8 @@ Reference implementation of the theory and of the numerical study reported in
 
 > C. Urrea, *An Axiomatic Resilience Functional for Fault-Tolerant Control of
 > Redundant Manipulators: Representation, Rank Invariance, and Sample
-> Complexity*, **Mathematics** (MDPI), 2026.
+> Complexity*, **Mathematics** (MDPI), 14, 3231. https://doi.org/10.3390/math14173231
+
 
 Everything in the paper is produced by this repository. There is no hardware in
 the loop and none is required: the object being validated is a set of theorems,
