@@ -8,7 +8,7 @@ study of
 > Complexity*, *Mathematics* **2026**, *14*, 3231. https://doi.org/10.3390/math14173231
 
 Development repository: <https://github.com/ClaudioUrrea/rsp-resilience>
-Release archived here: **v1.0.0**
+Release archived here: **v1.1.0**
 
 ## Files
 
