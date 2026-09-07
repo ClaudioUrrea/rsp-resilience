@@ -5,8 +5,7 @@ study of
 
 > C. Urrea, *An Axiomatic Resilience Functional for Fault-Tolerant Control of
 > Redundant Manipulators: Representation, Rank Invariance, and Sample
-> Complexity*, **Mathematics** (MDPI), 14, 3231. https://doi.org/10.3390/math14173231
-
+> Complexity*, *Mathematics* **2026**, *14*, 3231. https://doi.org/10.3390/math14173231
 
 Development repository: <https://github.com/ClaudioUrrea/rsp-resilience>
 Release archived here: **v1.0.0**
