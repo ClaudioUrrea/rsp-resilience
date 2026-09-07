@@ -8,8 +8,8 @@ authors:
     email: claudio.urrea@usach.cl
     affiliation: "Electrical Engineering Department, Faculty of Engineering, University of Santiago of Chile"
     orcid: "https://orcid.org/0000-0001-7197-8928"
-version: "1.0.0"
-date-released: "2026-08-12"
+version: "1.1.0"
+date-released: "2026-08-28"
 license: MIT
 repository-code: "https://github.com/ClaudioUrrea/rsp-resilience"
 identifiers:
@@ -35,4 +35,11 @@ preferred-citation:
   journal: Mathematics
   publisher:
     name: MDPI
+  volume: 14
+  issue: 17
+  start: 3231
   year: 2026
+  month: 9
+  doi: 10.3390/math14173231
+  issn: "2227-7390"
+  url: "https://www.mdpi.com/2227-7390/14/17/3231"
