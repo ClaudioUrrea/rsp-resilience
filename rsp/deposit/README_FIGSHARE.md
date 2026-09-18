@@ -7,8 +7,9 @@ study of
 > Redundant Manipulators: Representation, Rank Invariance, and Sample
 > Complexity*, *Mathematics* **2026**, *14*, 3231. https://doi.org/10.3390/math14173231
 
+
 Development repository: <https://github.com/ClaudioUrrea/rsp-resilience>
-Release archived here: **v1.1.0**
+Release archived here: **v1.0.0**
 
 ## Files
 
@@ -23,7 +24,7 @@ Release archived here: **v1.1.0**
 ## Reproducing
 
 ```bash
-unzip rsp-resilience-v1.0.0-code.zip && cd rsp-resilience-v1.1.0
+unzip rsp-resilience-v1.0.0-code.zip && cd rsp-resilience-v1.0.0
 pip install -r requirements.txt
 python scripts/verify_dynamics.py                      # ~30 s
 python scripts/run_experiments.py --episodes 100 --calib 48 --seed 20260811

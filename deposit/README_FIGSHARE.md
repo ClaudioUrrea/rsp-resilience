@@ -7,24 +7,23 @@ study of
 > Redundant Manipulators: Representation, Rank Invariance, and Sample
 > Complexity*, *Mathematics* **2026**, *14*, 3231. https://doi.org/10.3390/math14173231
 
-
 Development repository: <https://github.com/ClaudioUrrea/rsp-resilience>
-Release archived here: **v1.0.0**
+Release archived here: **v1.1.0**
 
 ## Files
 
 | File | Contents |
 |---|---|
-| `rsp-resilience-v1.0.0-code.zip` | The complete source: dynamics, five plants, eight fault classes, eight control laws, the episode engine, the exact task margin, the scoring functional and the statistics, plus the seven scripts that regenerate the paper, verify it and assemble this record. |
-| `rsp-resilience-v1.0.0-data.zip` | `results/raw_<plant>.npz` — the raw episode-level criteria of all 32,000 evaluation episodes — together with `meta.json` (calibrated detection thresholds, reference constants, execution times, full configuration, seed) and `summary.json` (every headline number quoted in the paper). |
-| `rsp-resilience-v1.0.0-figures.zip` | The seven figures as published, plus `tables/tables.tex`, which carries the complete 28-row pairwise comparison of which Table 5 of the paper prints a selection. |
+| `rsp-resilience-v1.1.0-code.zip` | The complete source: dynamics, five plants, eight fault classes, eight control laws, the episode engine, the exact task margin, the scoring functional and the statistics, plus the seven scripts that regenerate the paper, verify it and assemble this record. |
+| `rsp-resilience-v1.1.0-data.zip` | `results/raw_<plant>.npz` — the raw episode-level criteria of all 32,000 evaluation episodes — together with `meta.json` (calibrated detection thresholds, reference constants, execution times, full configuration, seed) and `summary.json` (every headline number quoted in the paper). |
+| `rsp-resilience-v1.1.0-figures.zip` | The seven figures as published, plus `tables/tables.tex`, which carries the complete 28-row pairwise comparison of which Table 5 of the paper prints a selection. |
 | `CHECKSUMS.sha256` | SHA-256 of each archive. |
 | `ENVIRONMENT.txt` | Interpreter, platform and library versions under which the deposited results were produced. |
 
 ## Reproducing
 
 ```bash
-unzip rsp-resilience-v1.0.0-code.zip && cd rsp-resilience-v1.0.0
+unzip rsp-resilience-v1.1.0-code.zip && cd rsp-resilience-v1.1.0
 pip install -r requirements.txt
 python scripts/verify_dynamics.py                      # ~30 s
 python scripts/run_experiments.py --episodes 100 --calib 48 --seed 20260811
@@ -90,6 +89,11 @@ personal data are involved: the objects being validated are theorems, and the
 simulations verify their bounds on concrete dynamics.
 
 ## Versions
+
+**v1.1.0** — adds the sensitivity analysis of Section 8.6: the raw episodes of
+the two supplementary threshold campaigns at multipliers 1.15 and 1.50, the
+sensitivity figure, `scripts/make_sensitivity.py` and
+`scripts/verify_sensitivity_claims.py`.
 
 **v1.0.0** — first public release, accompanying the article.
 
