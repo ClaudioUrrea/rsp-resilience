@@ -1,4 +1,4 @@
-# Axiomatic Resilience Scoring for Fault-Tolerant Control of Redundant Manipulators
+# RS-p — Axiomatic Resilience Scoring for Fault-Tolerant Control of Redundant Manipulators
 
 Reference implementation of the theory and of the numerical study reported in
 
@@ -10,7 +10,7 @@ Everything in the paper is produced by this repository. There is no hardware in
 the loop and none is required: the object being validated is a set of theorems,
 and the simulations verify their bounds on concrete dynamics.
 
-* Code: <https://github.com/ClaudioUrrea/rsp-resilience>
+* Code: [https://github.com/ClaudioUrrea/rsp-resilience](https://github.com/ClaudioUrrea/rsp-resilience)
 * Archived release, raw episode-level data and figures: Figshare,
   DOI [10.6084/m9.figshare.33214149](https://doi.org/10.6084/m9.figshare.33214149)
 
@@ -79,8 +79,12 @@ This is the only expensive step. It performs, for each of the five plants:
 1. **Detector calibration.** 48 fault-free episodes per controller. The
    per-actuator residual thresholds are set to 1.30 times the 99th percentile of
    the peak filtered residual observed after the settling time, and the
-   task-error threshold likewise. This fixes the pre-fault false-alarm rate at
-   about 1% *by construction* and removes hand-tuned thresholds from the study.
+   task-error threshold likewise. The rule removes hand-tuned thresholds from
+   the study and is applied identically to all eight controllers. Note that a
+   threshold at the 99th percentile of the fault-free peaks does *not* give a 1%
+   false-alarm rate per episode: a fault is declared when any residual channel
+   crosses at any instant, and the measured pre-fault rate is 3.8% at this
+   setting, 6.9% at multiplier 1.15 and 1.3% at 1.50 (Section 8.6).
 2. **Reference constant `x_4^star`.** A *second, independent* set of 48
    fault-free episodes per controller, run with the calibrated thresholds
    already active. The constant is three times the median nominal power, pooled
@@ -157,30 +161,23 @@ python scripts/verify_paper_claims.py
 
 The complement of Step 4. Where `verify_deposit.py` asks whether the archive is
 complete and coherent, this script asks whether the *text* agrees with the data:
-it recomputes the seven rows of Table 2 (differences of medians, Cliff's delta,
+it recomputes the seven rows of Table 5 (differences of medians, Cliff's delta,
 Holm-adjusted p-values, `kappa*`), the captions of Figures 3–5, the sliding-mode
-fragility of Section 8.4, the fault-class rates of Figure 6, the sensitivity
-analysis of Section 8.5 and the campaign counts, and prints one PASS/FAIL line
+fragility of Section 8.5, the fault-class rates of Figure 6, the sensitivity
+analysis of Section 8.6 and the campaign counts, and prints one PASS/FAIL line
 per claim — 70 in all. Run it after any change to the weights, the reference
 constants or the campaign.
 
 ### Step 6 — check the bibliography
 
 ```bash
-python scripts/verify_references.py paper/Urrea_Mathematics_ResilienceFunctional_v8.tex
+python scripts/verify_references.py <manuscript.tex>
 ```
 
 Queries Crossref for every `\bibitem` with a DOI and reports title/year
 disagreements. Requires network access; nothing is rewritten automatically.
-
-### Step 7 — rebuild the manuscript
-
-```bash
-cd paper && latexmk -pdf Urrea_Mathematics_ResilienceFunctional_v8.tex
-```
-
-The MDPI `Definitions/` folder from the official template must be present, and
-the figures must be reachable at `figures/` relative to the manuscript.
+The manuscript source is not redistributed here; the published article is open
+access under CC BY at the DOI above.
 
 ### Typography
 
