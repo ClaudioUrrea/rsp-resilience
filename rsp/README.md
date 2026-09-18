@@ -234,6 +234,7 @@ Each `raw_<plant>.npz` contains, per controller `c`:
 
 Please cite both the article and the archived record; `CITATION.cff` carries the
 machine-readable form.
+
 ## 8. License
 
 MIT — see `LICENSE`.
