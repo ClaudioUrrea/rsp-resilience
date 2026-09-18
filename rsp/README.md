@@ -4,14 +4,13 @@ Reference implementation of the theory and of the numerical study reported in
 
 > C. Urrea, *An Axiomatic Resilience Functional for Fault-Tolerant Control of
 > Redundant Manipulators: Representation, Rank Invariance, and Sample
-> Complexity*, **Mathematics** (MDPI), 14, 3231. https://doi.org/10.3390/math14173231
-
+> Complexity*, *Mathematics* **2026**, *14*, 3231. https://doi.org/10.3390/math14173231
 
 Everything in the paper is produced by this repository. There is no hardware in
 the loop and none is required: the object being validated is a set of theorems,
 and the simulations verify their bounds on concrete dynamics.
 
-* Code: <https://github.com/ClaudioUrrea/rsp-resilience>
+* Code: [https://github.com/ClaudioUrrea/rsp-resilience](https://github.com/ClaudioUrrea/rsp-resilience)
 * Archived release, raw episode-level data and figures: Figshare,
   DOI [10.6084/m9.figshare.33214149](https://doi.org/10.6084/m9.figshare.33214149)
 
@@ -80,8 +79,12 @@ This is the only expensive step. It performs, for each of the five plants:
 1. **Detector calibration.** 48 fault-free episodes per controller. The
    per-actuator residual thresholds are set to 1.30 times the 99th percentile of
    the peak filtered residual observed after the settling time, and the
-   task-error threshold likewise. This fixes the pre-fault false-alarm rate at
-   about 1% *by construction* and removes hand-tuned thresholds from the study.
+   task-error threshold likewise. The rule removes hand-tuned thresholds from
+   the study and is applied identically to all eight controllers. Note that a
+   threshold at the 99th percentile of the fault-free peaks does *not* give a 1%
+   false-alarm rate per episode: a fault is declared when any residual channel
+   crosses at any instant, and the measured pre-fault rate is 3.8% at this
+   setting, 6.9% at multiplier 1.15 and 1.3% at 1.50 (Section 8.6).
 2. **Reference constant `x_4^star`.** A *second, independent* set of 48
    fault-free episodes per controller, run with the calibrated thresholds
    already active. The constant is three times the median nominal power, pooled
@@ -168,20 +171,13 @@ constants or the campaign.
 ### Step 6 — check the bibliography
 
 ```bash
-python scripts/verify_references.py paper/Urrea_Mathematics_ResilienceFunctional_v8.tex
+python scripts/verify_references.py <manuscript.tex>
 ```
 
 Queries Crossref for every `\bibitem` with a DOI and reports title/year
 disagreements. Requires network access; nothing is rewritten automatically.
-
-### Step 7 — rebuild the manuscript
-
-```bash
-cd paper && latexmk -pdf Urrea_Mathematics_ResilienceFunctional_v8.tex
-```
-
-The MDPI `Definitions/` folder from the official template must be present, and
-the figures must be reachable at `figures/` relative to the manuscript.
+The manuscript source is not redistributed here; the published article is open
+access under CC BY at the DOI above.
 
 ### Typography
 
@@ -238,7 +234,6 @@ Each `raw_<plant>.npz` contains, per controller `c`:
 
 Please cite both the article and the archived record; `CITATION.cff` carries the
 machine-readable form.
-
 ## 8. License
 
 MIT — see `LICENSE`.
